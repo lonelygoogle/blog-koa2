@@ -43,18 +43,18 @@ router.post('/update', loginCheck, async function (ctx, next) {
     ctx.body = new ErrorModel('更新博客失败')
   }
 
-  const result = updateBlog(ctx.query.id, ctx.request.body)
-  return result.then(val => {
-      if (val) {
-        res.json(
-          new SuccessModel(val)
-        )
-      } else {
-        res.json(
-          new ErrorModel('更新博客失败')
-        )
-      }
-  })
+  // const result = updateBlog(ctx.query.id, ctx.request.body)
+  // return result.then(val => {
+  //     if (val) {
+  //       res.json(
+  //         new SuccessModel(val)
+  //       )
+  //     } else {
+  //       res.json(
+  //         new ErrorModel('更新博客失败')
+  //       )
+  //     }
+  // })
 })
 
 router.post('/del', loginCheck, async function (ctx, next) {
